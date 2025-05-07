@@ -1,4 +1,5 @@
 $(window).on("load", () => {
+  
   // ______________________________header__scroll_________________________________
   let rootFont = parseInt($(":root").css("font-size"));
   let scroll = $(window).scrollTop();
