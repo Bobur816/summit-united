@@ -101,7 +101,7 @@
   &__bottom {
     @include spaced;
     color: #000;
-    padding: 0 0 1.5rem 0;
+    padding: 1.5rem 0;
   }
 }
 
@@ -151,6 +151,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
+      padding: 0 0 1.5rem 0;
     }
   }
 }
