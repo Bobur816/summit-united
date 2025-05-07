@@ -1,0 +1,106 @@
+.btn {
+  border-radius: 2.5rem;
+  transition: all 0.3s;
+  padding: 0.75rem 3rem;
+
+  &__white {
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    font-weight: 600;
+    padding: 0.45rem 0.95rem;
+    border-radius: 2.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  &_line-carousel {
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    border: 1px solid var(--color-primary);
+
+    i {
+      font-size: 0.5rem;
+      color: var(--color-primary);
+    }
+
+    &:hover {
+      background-color: var(--color-red);
+      border-color: var(--color-red);
+
+      i {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+.btn_head,
+.btn_with-shape {
+  padding: 0.4rem;
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  p {
+    @include absCenter;
+  }
+
+  span {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    @include center;
+    transition: all 0.3s;
+    border: 1px solid var(--color-white);
+
+    i {
+      color: var(--color-white);
+      font-size: 0.6rem;
+      transition: all 0.3s;
+    }
+  }
+}
+.btn_head {
+  width: 50%;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    span {
+      background-color: var(--color-red);
+      border-color: var(--color-red);
+    }
+  }
+}
+
+.btn_with-shape {
+  width: 17.5rem;
+  background-color: var(--color-white);
+
+  p {
+    color: var(--color-primary);
+  }
+
+  span {
+    border: 1px solid var(--color-red);
+    background-color: var(--color-red);
+  }
+
+  &:hover {
+    span {
+      background-color: var(--color-white);
+      border-color: var(--color-red);
+
+      i {
+        color: var(--color-red);
+      }
+    }
+  }
+}

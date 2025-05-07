@@ -1,0 +1,254 @@
+.about-card {
+  background-color: var(--color-white);
+  height: 31rem;
+  border-radius: 1.5rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    height: 14rem;
+    max-height: 50%;
+    align-self: center;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  h3 {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+}
+
+.employee-card {
+  height: 26rem;
+  width: auto;
+  // background-color: red;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &-img {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    // position: ;
+    @include absCenter;
+    z-index: -1;
+    @include fullImg;
+    img {
+      @include fullImg;
+    }
+  }
+
+  &-info {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(17.5px);
+    border-radius: 1rem;
+    padding: 1.25rem 1.1rem;
+    color: var(--color-primary);
+
+    h3 {
+      // font-family: "Optima nova LT Pro";
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.6rem;
+    }
+
+    h4 {
+      // font-family: "Optima nova LT Pro";
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.services-card {
+  background-color: var(--color-white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  grid-column: span 2;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    grid-column: span 3;
+  }
+
+  &:nth-child(5) {
+    grid-row: span 2;
+  }
+
+  &__info {
+    z-index: 3;
+  }
+  h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: all 0.7s;
+  }
+
+  ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
+      color: var(--color-gray);
+      font-size: 1rem;
+      font-weight: 400;
+      transition: all 0.7s;
+
+      &.for-more {
+        display: none;
+      }
+    }
+  }
+
+  button {
+    @include center;
+    align-self: flex-end;
+    gap: 1rem;
+    cursor: pointer;
+    margin-top: 1.85rem;
+    z-index: 2;
+    transition: all 0.7s;
+
+    span {
+      display: inline-block;
+      height: 2.25rem;
+      width: 2.25rem;
+      border-radius: 50%;
+      background-color: var(--color-red);
+      @include center;
+      position: relative;
+
+      i {
+        color: var(--color-white);
+      }
+
+      &::after {
+        content: "";
+        transition: all 1s ease;
+        position: absolute;
+        @include absCenter;
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+  }
+
+  &:hover {
+    * {
+      color: var(--color-white);
+    }
+    button {
+      span {
+        &::after {
+          transform: scale(100);
+          // transform-origin: center right;
+        }
+      }
+    }
+  }
+}
+
+.news-card {
+  height: 20rem;
+  background-color: var(--color-white);
+  transition: all 0.3s;
+  border-radius: 1.5rem;
+
+  overflow: hidden;
+  position: relative;
+
+  &__info {
+    height: 100%;
+    padding: 1.5rem;
+    color: var(--color-primary);
+    @include spaced;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__shade {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s;
+  }
+
+  &__top {
+    h3 {
+      margin-bottom: 1.25rem;
+      width: 80%;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    p {
+      transform: translateY(1rem);
+      transition: all 0.3s;
+      font-weight: 400;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    text-align: right;
+  }
+
+  &:hover {
+    background-color: var(--color-primary);
+    .news-card__info {
+      height: 100%;
+      padding: 1.5rem;
+      color: var(--color-white);
+      @include spaced;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    margin-top: 1.5rem;
+    &__wrapper {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .about-card {
+    height: 25rem;
+  }
+
+  .services-card {
+    grid-column: span 1;
+    padding: 1.3rem;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      grid-column: span 1;
+    }
+
+    &:nth-child(5) {
+      grid-row: span 1;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.splide {
+  width: 100%;
+  padding-bottom: 1.15rem;
+}
+.splide__slide {
+  height: 9rem;
+  background-color: var(--color-white);
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 1.5rem;
+  position: relative;
+  img {
+    @include absCenter;
+    height: 60%;
+    width: 70%;
+    object-fit: contain;
+
+    position: absolute;
+    // background-color: red;
+  }
+}
+
+@media (max-width: 768px) {
+  .splide__slide {
+    height: 5.5rem;
+    border-radius: 0.89rem;
+  }
+}

@@ -1,0 +1,156 @@
+.footer {
+  margin-top: 5rem;
+  background-color: var(--color-white);
+  border-radius: 2.5rem 2.5rem 0 0;
+  overflow: hidden;
+  padding-top: 3.5rem;
+
+  .up {
+    @include center;
+    gap: 0.75rem;
+    width: fit-content;
+
+    a {
+      height: 2.4rem;
+      width: 2.4rem;
+      border-radius: 50%;
+      position: relative;
+      background-color: var(--color-red);
+      display: inline-block;
+      @include center;
+
+      i {
+        @include absCenter;
+        font-size: 0.7rem;
+        line-height: 100%;
+        color: var(--color-white);
+      }
+    }
+
+    span {
+      font-size: 0.8rem;
+      font-weight: 200;
+    }
+  }
+
+  &__part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 1fr;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  &__logo {
+    max-width: 15rem;
+  }
+
+  &__address {
+    h4 {
+      color: var(--color-primary);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+
+      span {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+
+      &.for-telegram {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .qr-code-img {
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__link {
+      font-size: 400;
+      transition: all 0.3s;
+
+      &.active {
+        color: var(--color-primary);
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__bottom {
+    @include spaced;
+    color: #000;
+    padding: 0 0 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 2rem;
+    padding-top: 2.5rem;
+
+    .logo-part {
+      text-align: center;
+    }
+
+    &__wrapper {
+      position: relative;
+    }
+
+    &__part {
+      position: relative;
+      &:not(&:first-child) {
+        width: fit-content;
+      }
+      .up {
+        position: absolute;
+        right: 3rem;
+        top: calc(100% + 15.5rem);
+      }
+
+      &.qr {
+        position: absolute;
+        right: 0;
+        top: 6.1rem;
+      }
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__address {
+      h4 {
+        font-size: 1rem;
+      }
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.section__title-red {
+  color: var(--color-red);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.section__title {
+  color: var(--color-gray);
+  font-size: 2.25rem;
+  line-height: normal;
+  font-weight: 500;
+  margin: 0 auto;
+
+  span {
+    font-family: "Optima nova LT Pro";
+    color: var(--color-primary);
+    font-weight: 400;
+  }
+}
+
+.section__title-big {
+  color: var(--color-primary);
+  // font-family: "Optima nova LT Pro";
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section__head {
+  @include center;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+
+  h2,
+  p {
+    color: var(--color-gray);
+    text-align: center;
+  }
+
+  p {
+    margin-top: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section__title-red {
+    margin-bottom: 0.8rem;
+  }
+
+  .section__title {
+    font-size: 1.25rem;
+  }
+
+  .section__title-big {
+    font-size: 2rem;
+  }
+
+  .section__head {
+    width: 100%;
+
+    p {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+}

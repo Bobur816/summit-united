@@ -1,0 +1,60 @@
+.callback__form {
+  color: var(--color-white);
+
+  input {
+    display: block;
+    height: 3rem;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 3rem;
+    transition: all 0.3s;
+    margin-bottom: 1rem;
+
+    &:focus {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      &::placeholder {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #8b8b8b;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 160.2%; /* 25.632px */
+    max-width: 80%;
+  }
+
+  button {
+    width: 100%;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-red);
+      color: var(--color-white);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .callback__form {
+    input {
+      width: 100%;
+    }
+
+    span {
+      max-width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
