@@ -1274,12 +1274,17 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.about-card img {
-  height: 14rem;
-  max-height: 50%;
+.about-card__img {
+  height: 16rem;
   align-self: center;
   margin-top: 1rem;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-card__img svg {
+  max-height: 100%;
 }
 .about-card h3 {
   color: #000;
@@ -1484,6 +1489,9 @@ body {
   }
   .about-card {
     height: 25rem;
+  }
+  .about-card__img {
+    height: 14rem;
   }
   .services-card {
     grid-column: span 1;

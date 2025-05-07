@@ -10,6 +10,75 @@ $(window).on("load", () => {
     scroll > rootFont * 2 ? $(".header").addClass("header__scrolled") : $(".header").removeClass("header__scrolled");
   });
 
+  // ______________________________animate________________________________
+  function animSvg() {
+    let svgA1C = document.querySelectorAll(".svgAnim1 circle");
+
+    svgA1C.forEach((el, n) => {
+      gsap.to(el, {
+        xPercent: (65 / svgA1C.length) * n,
+        yPercent: (-65 / svgA1C.length) * n,
+        duration: 2.8,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    });
+
+    let svgA2C = document.querySelectorAll(".svgAnim2 path");
+    var tl = gsap.timeline({ repeat: -1 });
+    svgA2C.forEach((el, n) => {
+      tl.to(
+        el,
+        {
+          rotate: (90 / (svgA1C.length - 1)) * n,
+          duration: 1.6,
+          ease: "power1.inOut",
+          transformOrigin: "center center",
+        },
+        0
+      );
+    });
+
+    svgA2C.forEach((el, n) => {
+      tl.to(
+        el,
+        {
+          rotate: (90 / (svgA1C.length - 1)) * n + 180,
+          duration: 2,
+          ease: "power1.in",
+          transformOrigin: "center center",
+        },
+        1.6
+      );
+    });
+    svgA2C.forEach((el, n) => {
+      tl.to(
+        el,
+        {
+          rotate: 720,
+          duration: 2,
+          ease: "power1.out",
+          transformOrigin: "center center",
+        },
+        3.6
+      );
+    });
+
+    let svgA3C = document.querySelectorAll(".svgAnim3 ellipse ");
+    svgA3C.forEach((el, n) => {
+      gsap.to(el, {
+        attr: { rx: 125 - (100 * n) / (svgA3C.length - 1) },
+        duration: 2.8,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    });
+  }
+
+  animSvg();
+
   // ______________________________.mobile__toggler________________________________
 
   $(".mobile-nav__open").on("click", function () {

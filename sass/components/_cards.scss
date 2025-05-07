@@ -8,12 +8,16 @@
   flex-direction: column;
   justify-content: space-between;
 
-  img {
-    height: 14rem;
-    max-height: 50%;
+  &__img {
+    height: 16rem;
     align-self: center;
     margin-top: 1rem;
     max-width: 100%;
+    @include center;
+
+    svg {
+      max-height: 100%;
+    }
   }
 
   h3 {
@@ -236,6 +240,10 @@
 
   .about-card {
     height: 25rem;
+
+    &__img {
+      height: 14rem;
+    }
   }
 
   .services-card {
